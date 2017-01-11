@@ -6,7 +6,7 @@ Packages we need here are:
 - PyAudio
 - google-api-python-client
 
-The test file speechprogram.py is tested to work under Windows 10.
+The test file speechprogram.py is tested to work under Python 3.5 and Windows 10.
 
 Run
 ```
