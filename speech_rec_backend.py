@@ -48,14 +48,19 @@ def gotoStart(eng):
         if eng.isBusy() == True:
                 eng.stop()
 
-# copied from GitHub
-def save(audio):
-        # again everything needs to connect to the GUI
+# copied from GitHub                                                           
+def saveAudio(audio):
+        # again everything needs to connect to the GUI                          
         fname = input("What is your file name? ")
 
-        # write audio to WAV file
+        # write audio to WAV file                                               
         with open(fname, "wb") as f:
                 f.write(audio.get_wav_data())
+
+def saveText(rcdng):
+        fname = input("What is your file name? ")
+        with open(fname, 'w') as f:
+                f.write(rcdng)
 
 def changeVoice(eng):
         voices = eng.getProperty('voices')
