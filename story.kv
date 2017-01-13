@@ -1,0 +1,17 @@
+<storyWidget>:
+        canvas:
+                Rectangle:
+                        pos: 0, root.top - 80
+                        size: self.width, 10
+
+        Button:
+                on_release: root.record()
+                center_x: root.width/3
+                center_y: root.top - 30
+                text: "Record"
+
+        Button:
+                on_release: root.save()
+                center_x: root.width * 2/3
+                center_y: root.top - 30
+                text: "Save"
