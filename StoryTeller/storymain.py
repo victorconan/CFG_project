@@ -34,10 +34,10 @@ class RecordButton(Button):
             self.output = "Your story:\n{}".format(value)
         
         except sr.UnknownValueError:
-            self.output = ("Oops! Didn't catch that")
+            self.output = ("Story Teller didn't catch that")
         
         except sr.RequestError as e:
-            self.output = ("Uh oh! Couldn't request results from Google Speech Recognition service; {0}".format(e))
+            self.output = ("Story Teller couldn't request results from Google Speech Recognition service; {0}".format(e))
 
 class PlayButton(Button):
     #take the value from the text input and play it as audio
