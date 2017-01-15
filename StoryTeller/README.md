@@ -1,3 +1,4 @@
+##StoryTeller V1
 The StoryTeller V1 is an educational program developed by Python 3.5 and Kivy 1.2. This program takes the audio input from the user and shows it as text on the screen.
 User can edit the text and re-play the text as audio.
 
