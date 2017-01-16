@@ -1,0 +1,19 @@
+<Root>:
+    orientation: 'vertical'
+    RecordButton:
+        id: record_button
+        text: 'Record Story'
+        on_release: self.record()
+        height: '50dp'
+        size_hint_y: None
+
+    PlayButton:
+        id: play_button
+        text: 'Play Story'
+        on_release: self.play(textinput.text)
+        height: '50dp'
+        size_hint_y: None
+
+    TextInput:
+        id: textinput
+        text: record_button.output
