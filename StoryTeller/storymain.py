@@ -70,6 +70,8 @@ class RecordButton(Button):
             f.write(self.output)
 
         self.savenum += 1
+        global savenum
+        savenum = self.savenum #updates global variable
 
 
 class PlayButton(Button):
