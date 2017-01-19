@@ -81,10 +81,10 @@ class PlayButton(Button):
         engine.say(text)
         engine.runAndWait()
 
-class SmallButton(Button):
+class LargeButton(Button):
     #make text small
-    def small(self,text):
-        outputsize = '12dp'
+    def large(self,text):
+        outputsize = '20dp'
         #do we need to refresh?
 
 class StoryApp(App):
