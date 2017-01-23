@@ -13,3 +13,5 @@ The UI of the StoryTeller V3
 When record button is disabled
 
 <img width="301" alt="storytelling ui2" src="https://cloud.githubusercontent.com/assets/7435478/22190806/f21ebe50-e0f3-11e6-8721-3c9288ccc426.PNG">
+
+The program is tested to run under Windows 10
