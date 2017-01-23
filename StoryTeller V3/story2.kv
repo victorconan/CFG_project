@@ -1,0 +1,105 @@
+Root:
+    text_input: textinput
+    
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 3
+            size_hint_y: None
+            height: 40
+            Button:
+                id: record_button
+                text: 'Record Story'
+                on_release: root.record()
+                background_disabled_normal: ''
+                disabled_color: 1,0,0,1
+            Button:
+                id: play_button
+                text: 'Play Story'
+                on_release: root.play(textinput.text)
+            Button:
+                id: pause_button
+                text: 'Pause'
+                on_release: root.pause()
+                
+        GridLayout:
+            cols: 3
+            size_hint_y: None
+            height: 40
+            Button:
+                id: text_size
+                text: 'Large Text'
+                on_release: root.text_large()
+            Button:
+                id: text_size2
+                text: 'Small Text'
+                on_release: root.text_small()
+            Button:
+                id: color
+                text: 'Change Color'
+                on_release: root.text_change_color()
+                
+        GridLayout:
+            cols: 2
+            size_hint_y: None
+            height: 40
+            Button:
+                id: save_text
+                text: 'Save Story'
+                on_release: root.show_save()
+            Button:
+                id: load_text
+                text: 'Load Story'
+                on_release: root.show_load()
+
+        BoxLayout:
+            TextInput:
+                id: textinput
+                text: root.output
+                font_size: root.text_size
+                foreground_color: root.text_color
+
+<SaveDialog>:
+    text_input: text_input
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+            on_selection: text_input.text = self.selection and self.selection[0] or ''
+
+        TextInput:
+            id: text_input
+            size_hint_y: None
+            height: 30
+            multiline: False
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Save"
+                on_release: root.save(filechooser.path, text_input.text)
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Load"
+                on_release: root.load(filechooser.path, filechooser.selection)
