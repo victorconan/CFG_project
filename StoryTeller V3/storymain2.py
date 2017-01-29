@@ -14,6 +14,7 @@ from kivy.uix.popup import Popup
 
 import os
 import random
+from os import system
 
 import speech_recognition as sr
 import pyttsx as px
@@ -75,9 +76,11 @@ class Root(FloatLayout):
         
     #take the value from the text input and play it as audio
     def play(self,text):
-        engine = px.init()
-        engine.say(text)
-        engine.runAndWait()
+        ##For Windows, please uncomment the below code
+        #engine = px.init()
+        #engine.say(text)
+        #engine.runAndWait()
+        system("say "+str(text))
 
     def pause(self):
         #stop_listening = r.listen_in_background(m, callback)
